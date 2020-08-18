@@ -1,3 +1,13 @@
 .header {
-   
+   position: relative;
+   width: 100%;
+   background-color: rgb(252, 232, 232);
+   padding: 10px 0;
+   text-align: center;
+}
+.header__controls {
+   position: absolute;
+   top: 50%;
+   right: 30px;
+   transform: translateY(-50%);
 }
