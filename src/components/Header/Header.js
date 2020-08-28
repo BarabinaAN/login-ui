@@ -4,9 +4,19 @@ import './Header.scss'
 
 const Header = () => {
    return (
-      <header className='header'>
-         <h1>Login IU on React</h1>
-         <Link to='/'> Home page </Link>
+      <header className='header d-flex justify-content-between align-items-center px-4 w-100'>
+         <Link to='/' className='header__logo text-white text-decoration-none text-uppercase'> 
+            Login IU 
+            <span className='text-white-50'> on React </span> 
+         </Link>
+         <nav className='nav' >
+            <Link to='/login/' className='nav-link text-light'> 
+               Login 
+            </Link>
+            <Link to='/login/' className='nav-link disabled'> 
+               Another 
+            </Link>
+         </nav>
       </header>
    )
 }

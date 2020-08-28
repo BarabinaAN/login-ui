@@ -7,17 +7,17 @@ const Login = ({ logged, onLogin }) => {
 
    const renderLogin = () => {
       return (
-         <div className='d-flex justify-content-between'>
-            <div className='login'>
+         <div className='login first-screen row no-gutters'>
+            <div className='col-lg-6 col-sm-12'>
                <img 
-                  className='login__img' 
+                  className='login__img w-100' 
                   src={bgImg} 
                   alt='mount'
                />
             </div>
-            <div className='login p-4'>
-               <h2>Login</h2>
-               <form className=''>
+            <div className='col-lg-6 col-sm-12 px-4 py-5'>
+               <h2 className='mb-4'>Login</h2>
+               <form>
                   <div className='form-group'>
                      <label htmlFor='loginEmail'>Email address</label>
                      <input 
@@ -48,12 +48,12 @@ const Login = ({ logged, onLogin }) => {
                      />
                      <label htmlFor='loginCheckbox'>I agree</label>
                   </div>
-                  <a
+                  <button
                      className='btn btn-primary' 
                      onClick={onLogin}
                   >
                      Submit
-                  </a>
+                  </button>
                </form>
             </div>
          </div>

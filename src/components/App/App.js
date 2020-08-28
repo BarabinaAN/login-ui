@@ -19,13 +19,12 @@ class App extends Component {
 
   render() {
     const { logged } = this.state
-    const header = logged ? <Header /> : null
     return (
       <Router>
-        {header}
+        <Header />
         <Switch>
           <Route path='/' exact>
-            {!logged ? <Redirect to='/login' /> : null}
+            {!logged ? <Redirect to='/login/' /> : null}
             <Home logged={logged}/>
           </Route>
           <Route path='/login'>
