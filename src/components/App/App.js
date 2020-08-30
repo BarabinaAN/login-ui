@@ -1,7 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Header from '../Header'
 import Home from '../Home'
 import Login from '../Login'
+import Personal from '../Personal'
+import News from '../News'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import './App.scss';
 
@@ -19,16 +21,23 @@ class App extends Component {
 
   render() {
     const { logged } = this.state
+    const redirectToLogin = !logged ? <Redirect to='/login/' /> : null
     return (
       <Router>
-        <Header />
+        <Header logged={logged} />
         <Switch>
-          <Route path='/' exact>
-            {!logged ? <Redirect to='/login/' /> : null}
-            <Home logged={logged}/>
+          <Route path='/' exact component={Home} />
+          <Route path='/news' exact>
+            {redirectToLogin}
+            <News />
+          </Route>
+          <Route path='/personal' exact>
+            {redirectToLogin}
+            <Personal/>
           </Route>
           <Route path='/login'>
-            <Login logged={logged} onLogin={this.onLogin}/>
+            {logged ? <Redirect to='/personal/' /> : null}
+            <Login onLogin={this.onLogin} />
           </Route>
           <Route />
         </Switch>
