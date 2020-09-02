@@ -1,12 +1,10 @@
 import React from 'react'
 import './Thumb.scss'
-
+import img from './thumb.svg'
 
 const Thumb = () => {
     return (
-        <div>
-            Thumb is work
-        </div>
+        <img src={img} className='thumb rounded-circle' alt='user'/>
     )
 }
 

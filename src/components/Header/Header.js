@@ -16,7 +16,7 @@ const Header = ({ logged }) => {
 
    const renderProfileLink = () => {
       return (
-         <Link to='/profile/' className='nav-link text-light'>
+         <Link to='/personal/' className='nav-link text-light'>
             <Thumb />
          </Link>
       )
@@ -28,7 +28,7 @@ const Header = ({ logged }) => {
             Login IU
                <span className='text-white-50'> on React </span>
          </Link>
-         <nav className='nav'>
+         <nav className='nav align-items-center'>
             {!logged ? renderLoginLink() : renderProfileLink()}
             <Link to="/news/" className='nav-link text-light'>
                Новости
